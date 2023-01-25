@@ -1,6 +1,6 @@
 const React = require('react');
-const Card = require('./CandidateCard');
 const Layout = require('./Layout');
+const Card = require('./CandidateCard');
 
 function CandidatesList({ title, candidatesDB }) {
   return (
