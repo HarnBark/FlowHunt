@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Main = require('../views/Main.jsx')
+const Main = require('../views/Main');
 
 router.get('/', (req, res) => {
   try {
@@ -8,6 +8,5 @@ router.get('/', (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
 
 module.exports = router;
