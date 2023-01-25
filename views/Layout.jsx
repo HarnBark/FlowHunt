@@ -1,25 +1,26 @@
 const React = require('react');
-const LeftNavigation = require('./LeftNavigation');
-const Navigation = require('./Navigation');
 
 function Layout({ title, children }) {
   return (
     <html lang="ru">
       <head>
         <meta charSet="UTF-8" />
-        <link rel="stylesheet" href="#" />
-        <link rel="stylesheet" href="#" />
-        <link rel="stylesheet" href="#" />
-        <script defer src="/scripts/" />
+        <link rel="icon" href="/img/favicon.png" sizes="32x32" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/styles/styles.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        />
         <title>{title}</title>
       </head>
       <link />
       <body>
-        <Navigation />
         <div className="body__container">
-          <LeftNavigation />
           {children}
+          <footer>&copy; HuntFlow 2022</footer>
         </div>
+        <script src="js/menu.js" />
       </body>
     </html>
   );
