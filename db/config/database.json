@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "mymac",
+    "username": "postgres",
     "password": "123456",
     "database": "HuntFlow",
     "host": "127.0.0.1",

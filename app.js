@@ -2,7 +2,9 @@ require('@babel/register');
 
 const express = require('express');
 const db = require('./db/models');
+
 const config = require('./config/config')
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
