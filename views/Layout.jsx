@@ -1,5 +1,5 @@
 const React = require('react');
-const Navigation = require('./Navigation');
+const LeftNavigation = require('./LeftNavigation');
 
 function Layout({ title, children }) {
   return (
@@ -15,7 +15,7 @@ function Layout({ title, children }) {
       <link />
       <body>
         <div className="body__container">
-          <Navigation />
+          <LeftNavigation />
           {children}
         </div>
       </body>

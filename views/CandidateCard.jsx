@@ -1,6 +1,6 @@
 const React = require('react');
 
-function CandidateCard({ candidate, user }) {
+function CandidateCard({ candidate }) {
   return (
     <div className="cand__profile__container">
       <div className="cand__container">
@@ -17,9 +17,10 @@ function CandidateCard({ candidate, user }) {
           <option>Отправлено приглашение</option>
           <option>Звонок-скрининг</option>
           <option>Видеоинтервью</option>
-          <option>Передано заказчику</option>
+          <option>Резюме у заказчика</option>
           <option>Интервью с заказчиком</option>
           <option>Оффер</option>
+          <option>Выход на работу</option>
           <option>Отказ</option>
         </select>
         {/* {user && user.id === candidate.user_id && (

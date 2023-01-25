@@ -2,28 +2,20 @@ const React = require('react');
 
 function Navigation() {
   return (
-    <div className="nav__container">
-      <ul className="nav__items">
-        <li className="nav__item">
-          <a href="/">В работе</a>
+    <div className="container">
+      <a href="/" className="logo">
+        HuntFlow
+      </a>
+      {/* <ul>
+        <li className="item">
+          <a href="/log">LogIn</a>
         </li>
-        <li className="nav__item">
-          <a href="/">У заказчика</a>
+        <li className="item">
+          <a href="/logout">LogOut</a>
         </li>
-        <li className="nav__item">
-          <a href="/">Интервью</a>
-        </li>
-        <li className="nav__item">
-          <a href="/">Оффер</a>
-        </li>
-        <li className="nav__item">
-          <a href="/">Выход на работу</a>
-        </li>
-        <li className="nav__item">
-          <a href="/">Отказ</a>
-        </li>
-      </ul>
+      </ul> */}
     </div>
   );
 }
+
 module.exports = Navigation;
