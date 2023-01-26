@@ -11,4 +11,24 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  // eslint-disable-next-line object-curly-newline
+  const { name, photo, email, experience, phone, skype, zoom } = req.body;
+  if (!name && !photo && !email && !experience && !phone && !skype && !zoom) {
+    res.status(400).json({ message1: 'exists' });
+    return;
+  }
+  await Candidate.create({
+    name,
+    photo,
+    email,
+    experience,
+    phone,
+    skype,
+    zoom,
+  });
+  res.json({ reg: true });
+  // res.status(200).json({ message: 'Card added' });
+});
+
 module.exports = router;

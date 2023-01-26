@@ -39,11 +39,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     status: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      // allowNull: false,
     },
     date: {
       type: DataTypes.DATE,
-      allowNull: false,
+      // allowNull: false,
     },
   }, {
     sequelize,

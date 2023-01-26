@@ -28,5 +28,7 @@ document.querySelector('#addcand').addEventListener('submit', async (e) => {
   // </div>
   //  `;
   const candHtml = await res.text();
-  document.querySelector('#cand_list').insertAdjacentHTML('beforeend', candHtml);
+  if (candHtml.message) {
+    document.querySelector('#add').innerHTML = candHtml.message;
+  }
 });
