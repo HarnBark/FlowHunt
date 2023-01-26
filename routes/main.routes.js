@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Candidate } = require('../db/models');
 const CandidateSmallCard = require('../views/CandidateSmallCard');
 const Main = require('../views/Main');
+const CandidateCard = require('../views/CandidateCard')
 
 router.get('/', async (req, res) => {
   try {
@@ -12,17 +13,23 @@ router.get('/', async (req, res) => {
   }
 });
 
-
 router.get('/:status', async (req, res) => {
   try {
     const { status } = req.params;
     if (status) {
       const data = await Candidate.findAll({ where: { status }, raw: true });
-      return res.renderComponent(Main, { title: 'HuntFlow', data });
+      res.renderComponent(Main, { title: 'HuntFlow', data });
     }
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
+});
+
+router.get('/candidate/:id', async (req, res) => {
+  const { id } = req.params;
+  const candidate = await Candidate.findOne({ where: { id }, raw: true });
+  res.renderComponent(CandidateCard, { candidate }, { doctype: false });
+});
 
 router.post('/', async (req, res) => {
   // eslint-disable-next-line object-curly-newline
@@ -40,7 +47,7 @@ router.post('/', async (req, res) => {
     skype,
     zoom,
   });
-  res.renderComponent(CandidateSmallCard, candidate = {candidate}, { doctype: false });
+  res.renderComponent(CandidateSmallCard, candidate = { candidate }, { doctype: false });
   // res.json({ reg: true });
   // res.status(200).json({ message: 'Card added' });
 });
