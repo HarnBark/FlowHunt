@@ -13,15 +13,23 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const {
-    name, img, year, description,
-  } = req.body;
-  if (name && img && year && description) {
+  const { name, photo, email, experience, phone, skype, zoom } = req.body;
+  if (name && photo && email && experience && phone && skype && zoom) {
     const newCandidate = await Candidate.create({
-      name, img, year, description, user_id: req.session.userid,
+      name,
+      photo,
+      email,
+      experience,
+      phone,
+      skype,
+      zoom,
+    //   user_id: req.session.userid,
     });
-    // res.json(newCar);
-    res.renderComponent(CandidateCard, { candidate: newCandidate }, { doctype: false });
+    res.renderComponent(
+      CandidateCard,
+      { candidate: newCandidate },
+      { doctype: false }
+    );
   }
 });
 // router.delete('/:idCar', async (req, res) => {
