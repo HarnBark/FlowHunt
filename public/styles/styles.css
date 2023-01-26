@@ -232,7 +232,14 @@ input[type='checkbox'] {
   content: '\005D';
 }
 .new-btn {
-  width: 20%;
+  width: 15%;
+}
+.new-btn img {
+  width: 100%;
+  transition: all 1s ease-in-out;
+}
+.new-btn:hover img {
+  transform: scale(1.2);
 }
 /* List */
 .candidates {
@@ -352,6 +359,76 @@ footer {
   font-weight: 300;
   color: #fff;
   box-sizing: border-box;
+}
+
+/* Модальное окно */
+.modal-window {
+  display: inline-block;
+}
+.modal-window > .modal-trigger {
+  display: none;
+}
+.modal-window > .modal-trigger ~ .modal-overlay {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: fixed;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-window > .modal-trigger ~ .modal-container {
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  z-index: 110;
+  position: fixed;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  transform: translate(-50%, -50%);
+}
+.modal-window > .modal-trigger:checked ~ .modal-overlay,
+.modal-window > .modal-trigger:checked ~ .modal-container {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Кнопка */
+.btn-modal {
+  cursor: pointer;
+  padding: 1rem 3rem;
+}
+
+/* Содержимое модального окна */
+.modal-content {
+  overflow: hidden; /*Для прокрутки в модальном окне надо поменять на overflow: auto и добавить высоту окна*/
+  background-color: #fff;
+}
+.modal-content .modal-content-header,
+.modal-content .modal-content-body {
+  padding: 1rem 2rem;
+}
+
+/* Кнопка Закрыть */
+.modal-content .modal-content-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content .modal-content-footer .item {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+}
+.modal-content .modal-content-footer .item.action {
+  background-color: #83bec5;
+  cursor: pointer;
+}
+.modal-content .modal-content-footer .item.action:hover {
+  background-color: #aed9e1;
 }
 
 /*Hard code*/
