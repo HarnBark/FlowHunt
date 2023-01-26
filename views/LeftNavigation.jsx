@@ -1,40 +1,105 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 const React = require('react');
 
 function LeftNavigation() {
   return (
     <div className="nav__container">
-      <ul className="nav__items">
+      <h3 className="menu__title">Меню</h3>
+      <ul className="nav__items" id="menu-main">
         <li className="nav__item">
-          <a href="/">Все кандидаты</a>
+          <a href="#" className="menu-item active">
+            <p>Все кандидаты</p>
+            <div className="counts">
+              <div className="count">1</div>
+              <div className="count">2</div>
+            </div>
+          </a>
         </li>
         <li className="nav__item">
-          <a href="/">Новые кандидаты</a>
+          <a href="#" className="menu-item">
+            <p>Новые кандидаты</p>
+            <div className="counts">
+              <div className="count">1</div>
+              <div className="count">2</div>
+            </div>
+          </a>
         </li>
         <li className="nav__item">
-          <a href="/">Отправлено письмо-приглашение</a>
+          <a href="#" className="menu-item">
+            <p>Отправлено приглашение</p>
+            <div className="counts">
+              <div className="count">1</div>
+              <div className="count">2</div>
+            </div>
+          </a>
         </li>
         <li className="nav__item">
-          <a href="/">Назначен звонок-скрининг</a>
+          <a href="#" className="menu-item">
+            <p>Назначен звонок-скрининг</p>
+            <div className="counts">
+              <div className="count">1</div>
+              <div className="count">2</div>
+            </div>
+          </a>
         </li>
         <li className="nav__item">
-          <a href="/">Назначено видеоинтервью</a>
+          <a href="#" className="menu-item">
+            <p>Назначено видеоинтервью</p>
+            <div className="counts">
+              <div className="count">1</div>
+              <div className="count">2</div>
+            </div>
+          </a>
         </li>
         <li className="nav__item">
-          <a href="/">Резюме передано заказчику</a>
+          <a href="#" className="menu-item">
+            <p>Резюме передано заказчику</p>
+            <div className="counts">
+              <div className="count">1</div>
+              <div className="count">2</div>
+            </div>
+          </a>
         </li>
         <li className="nav__item">
-          <a href="/">Интервью с заказчиком</a>
+          <a href="#" className="menu-item">
+            <p>Интервью с заказчиком</p>
+            <div className="counts">
+              <div className="count">1</div>
+              <div className="count">2</div>
+            </div>
+          </a>
         </li>
         <li className="nav__item">
-          <a href="/">Оффер</a>
+          <a href="#" className="menu-item">
+            <p>Выставлен оффер</p>
+            <div className="counts">
+              <div className="count">1</div>
+              <div className="count">2</div>
+            </div>
+          </a>
         </li>
         <li className="nav__item">
-          <a href="/">Выход на работу</a>
+          <a href="#" className="menu-item">
+            <p>Выход на работу</p>
+            <div className="counts">
+              <div className="count">1</div>
+              <div className="count">2</div>
+            </div>
+          </a>
         </li>
         <li className="nav__item">
-          <a href="/">Отказ</a>
+          <a href="#" className="menu-item">
+            <p>Отказ</p>
+            <div className="counts">
+              <div className="count">1</div>
+              <div className="count">2</div>
+            </div>
+          </a>
         </li>
       </ul>
+      <div className="new-btn">
+        <img src="/img/cross-icon.svg" alt="Добавить" />
+      </div>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 require('@babel/register');
 
 const express = require('express');
+const path = require('path');
 const db = require('./db/models');
 
-const config = require('./config/config')
-
+const config = require('./config/config');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,8 +13,8 @@ const mainRouter = require('./routes/main.routes');
 
 config(app);
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', mainRouter);
-
 
 const start = async () => {
   try {
