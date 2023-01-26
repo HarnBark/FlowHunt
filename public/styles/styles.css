@@ -257,6 +257,10 @@ input[type='checkbox'] {
   overflow-y: scroll;
   height: 400px;
 }
+#cand_name::-webkit-scrollbar {
+  width: 1px;
+  background-color: transparent;
+}
 .overflow {
   min-height: 600px;
 }
@@ -352,7 +356,7 @@ input[type='checkbox'] {
 }
 
 .cardGrey {
-  background: #777;
+  background: #f7f7f7;
 }
 /* Select */
 select {
