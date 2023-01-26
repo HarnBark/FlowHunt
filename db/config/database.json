@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "postgres",
-    "password": null,
-    "database": "HuntFlow",
+    "password": "postgres",
+    "database": "Hunt_Flow",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

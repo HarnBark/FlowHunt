@@ -4,14 +4,14 @@ const CandidatesList = require('./CandidatesList');
 const Navigation = require('./Navigation');
 const LeftNavigation = require('./LeftNavigation');
 
-function Main({ title, candidatesDB }) {
+function Main({ title, data }) {
   return (
     <Layout title={title}>
       <Navigation />
       <div className="container">
-        <LeftNavigation />
+        <LeftNavigation data={data} />
 
-        <CandidatesList candidatesDB={candidatesDB} />
+        <CandidatesList candidatesDB={data} />
       </div>
     </Layout>
   );

@@ -12,7 +12,6 @@ function Layout({ title, children }) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         />
-        <script defer src="/js/showcard.js" />
         <title>{title}</title>
       </head>
       <link />
@@ -21,7 +20,9 @@ function Layout({ title, children }) {
           {children}
           <footer>&copy; HuntFlow 2022</footer>
         </div>
-        <script src="js/menu.js" />
+        <script defer src="js/menu.js" />
+        <script defer src="js/chooseCandidate.js" />
+        <script defer src="/js/showcard.js" />
       </body>
     </html>
   );

@@ -38,6 +38,7 @@ module.exports = {
       },
       status: {
         type: Sequelize.TEXT,
+
         // allowNull: false,
       },
       date: {
