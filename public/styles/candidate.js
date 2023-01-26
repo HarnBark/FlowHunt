@@ -1,5 +1,6 @@
 document.querySelector('#addcand').addEventListener('submit', async (e) => {
   e.preventDefault();
+  // eslint-disable-next-line object-curly-newline, operator-linebreak
   const { name, photo, email, experience, phone, skype, zoom, method, action } =
     e.target;
   const res = await fetch(action, {

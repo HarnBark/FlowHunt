@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+  // eslint-disable-next-line object-curly-newline
   const { name, photo, email, experience, phone, skype, zoom } = req.body;
   if (name && photo && email && experience && phone && skype && zoom) {
     const newCandidate = await Candidate.create({
@@ -23,11 +24,12 @@ router.post('/', async (req, res) => {
       phone,
       skype,
       zoom,
-    //   user_id: req.session.userid,
+      //   user_id: req.session.userid,
     });
     res.renderComponent(
       CandidateCard,
       { candidate: newCandidate },
+      // eslint-disable-next-line comma-dangle
       { doctype: false }
     );
   }
