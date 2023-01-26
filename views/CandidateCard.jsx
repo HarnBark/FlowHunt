@@ -1,42 +1,32 @@
+/* eslint-disable react/prop-types */
 const React = require('react');
 
 function CandidateCard({ candidate }) {
   return (
-    <div className="cand__profile__container">
-      <div className="cand__container">
-        <div className="cand__inside">
-          <div className="cand__info">
-            <div className="cand__name">{candidate.name}</div>
-            <div className="cand__info__inside">
-              <div className="cand__info__left">
-                <div>
-                  <p>Почта:</p>
-                </div>
-                <div>
-                  <p>Опыт работы:</p>
-                </div>
-                <div>
-                  <p>Телефон:</p>
-                </div>
-                <div>
-                  <p>Skype:</p>
-                </div>
-                <div>
-                  <p>Zoom:</p>
-                </div>
-              </div>
-              <div className="cand__info__right">
-                <div>{candidate.email}</div>
-                <div>{candidate.experience}</div>
-                <div>{candidate.phone}</div>
-                <div>{candidate.skype}</div>
-                <div>{candidate.zoom}</div>
-              </div>
+    <div className="cand__container">
+      <div className="cand__inside">
+        <div className="cand__info">
+          <div className="cand__name">{candidate.name}</div>
+          <div className="cand__info__inside">
+            <div className="cand__info__left">
+              <p>Почта:</p>
+              <p>Опыт работы:</p>
+              <p>Телефон:</p>
+              <p>Skype:</p>
+              <p>Zoom:</p>
+            </div>
+            <div className="cand__info__right">
+              <div>{candidate.email}</div>
+              <div>{candidate.experience}</div>
+              <div>{candidate.phone}</div>
+              <div>{candidate.skype}</div>
+              <div>{candidate.zoom}</div>
             </div>
           </div>
-          <img src={candidate.photo} alt="candidate" className="cand__img" />
         </div>
+        <img src={candidate.photo} alt="candidate" className="cand__img" />
       </div>
+
       <div className="cand__buttons">
         <div className="cand__status">{candidate.status}</div>
         <select>
@@ -51,11 +41,6 @@ function CandidateCard({ candidate }) {
           <option>Отказ</option>
         </select>
       </div>
-      {/* {user && user.id === candidate.user_id && (
-          <button type="button" className="prodano" data-id={car.id}>
-            продал
-          </button>
-        )} */}
     </div>
   );
 }

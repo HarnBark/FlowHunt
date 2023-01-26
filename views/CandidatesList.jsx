@@ -11,7 +11,7 @@ function CandidatesList({ title, candidatesDB }) {
           <Card key={candidate.id} candidate={candidate} />
         ))}
       </div>
-      <div className="cont_cand" id="cand_list">
+      <div id="cand_list">
         {candidatesDB.map((candidate) => (
           <Card key={candidate.id} candidate={candidate} />
         ))}

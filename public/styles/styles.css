@@ -21,6 +21,7 @@ a:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 1em;
 }
 
 /* Navigation */
@@ -240,7 +241,7 @@ input[type='checkbox'] {
 }
 #cand_name {
   width: 30%;
-  padding: 2em;
+  padding: 0em 0em 0em 1em;
   margin: 1.5em 0;
   display: flex;
   flex-direction: column;
@@ -248,15 +249,14 @@ input[type='checkbox'] {
 #cand_list {
   width: 70%;
   border-left: 1px solid #ebebeb;
-  padding: 2em;
-  margin: 1.5em;
+  padding: 0em 2em 2em;
+  margin: 1.5em 0em 1.5em 1.5em;
   color: #383838;
   box-sizing: border-box;
 }
 .cand__inside {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 .cand__info {
@@ -266,7 +266,7 @@ input[type='checkbox'] {
 }
 .cand__name {
   width: 100%;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 700;
   font-family: 'Ubuntu', sans-serif;
   color: #303030;
@@ -285,7 +285,7 @@ input[type='checkbox'] {
 .cand__info__right {
   width: 65%;
 }
-.cand__info__left div p {
+.cand__info__left p {
   color: #b1b1b1;
   font-size: 1.2em;
   font-weight: 300;
@@ -310,6 +310,13 @@ input[type='checkbox'] {
   font-weight: 700;
   font-size: 1.3em;
 }
+
+#cand_name .cand__container {
+  padding: 10px;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 15px;
+}
+
 /* Select */
 select {
   font-size: 1.2em;
@@ -348,37 +355,23 @@ footer {
 }
 
 /*Hard code*/
-#cand_name
-  .cand__profile__container
-  .cand__container
-  .cand__inside
-  .cand__info
-  .cand__info__inside {
+#cand_name .cand__container .cand__inside .cand__info .cand__info__inside {
   display: none;
 }
-#cand_name .cand__profile__container .cand__buttons {
+#cand_name .cand__buttons {
   display: none;
 }
-#cand_name .cand__profile__container .cand__container .cand__inside {
+#cand_name .cand__container .cand__inside {
   margin: 1em 0;
 }
-#cand_name .cand__profile__container .cand__container .cand__inside .cand__img {
+#cand_name .cand__container .cand__inside .cand__img {
   order: 0;
   border-radius: 50%;
 }
-#cand_name
-  .cand__profile__container
-  .cand__container
-  .cand__inside
-  .cand__info {
+#cand_name .cand__container .cand__inside .cand__info {
   order: 1;
   padding-left: 1em;
 }
-#cand_name
-  .cand__profile__container
-  .cand__container
-  .cand__inside
-  .cand__info
-  .cand__name {
-  padding-left: 1em;
+#cand_name .cand__container .cand__inside .cand__info .cand__name {
+  padding-left: 0.5em;
 }
