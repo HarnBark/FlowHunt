@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Candidate } = require('../db/models');
+const CandidateSmallCard = require('../views/CandidateSmallCard');
 const Main = require('../views/Main');
 
 router.get('/', async (req, res) => {
@@ -18,7 +19,7 @@ router.post('/', async (req, res) => {
     res.status(400).json({ message1: 'exists' });
     return;
   }
-  await Candidate.create({
+  let candidate = await Candidate.create({
     name,
     photo,
     email,
@@ -27,7 +28,8 @@ router.post('/', async (req, res) => {
     skype,
     zoom,
   });
-  res.json({ reg: true });
+  res.renderComponent(CandidateSmallCard, candidate = {candidate}, { doctype: false });
+  // res.json({ reg: true });
   // res.status(200).json({ message: 'Card added' });
 });
 

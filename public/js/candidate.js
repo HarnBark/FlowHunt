@@ -3,8 +3,8 @@ document.querySelector('#addcand').addEventListener('submit', async (e) => {
   // eslint-disable-next-line object-curly-newline, operator-linebreak
   const { name, photo, email, experience, phone, skype, zoom, method, action } =
     e.target;
-  const smallCard = document.querySelector('#smallCard');
-  const newSmallCard = smallCard.cloneNode(true);
+  //  const smallCard = document.querySelector('#smallCard');
+  // const newSmallCard = smallCard.cloneNode(true);
   const res = await fetch(action, {
     method,
     headers: { 'Content-Type': 'application/json' },
@@ -30,12 +30,13 @@ document.querySelector('#addcand').addEventListener('submit', async (e) => {
   // </div>
   //  `;
   const candHtml = await res.text();
-  const parent = document.querySelector('#cand_name');
-  const image = newSmallCard.querySelector('img');
-  const nameDiv = newSmallCard.querySelector('div');
-  image.src = photo.value;
-  nameDiv.textContent = name.value;
-  parent.appendChild(newSmallCard);
+  document.querySelector('#cand_name').insertAdjacentHTML('beforeend', candHtml);
+  // const parent = document.querySelector('#cand_name');
+  // const image = newSmallCard.querySelector('img');
+  // const nameDiv = newSmallCard.querySelector('div');
+  // image.src = photo.value;
+  // nameDiv.textContent = name.value;
+  // parent.appendChild(newSmallCard);
 
   // if (candHtml.message) {
   //   document.querySelector('#add').innerHTML = candHtml.message;

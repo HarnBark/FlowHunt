@@ -10,6 +10,7 @@ router.get('/:id', async (req, res) => {
       where: { id: req.params.id },
       raw: true,
     });
+    //console.log(candidate);
     res.renderComponent(CandidateCard, (candidate = { candidate }), {
       doctype: false,
     });
