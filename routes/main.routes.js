@@ -28,7 +28,6 @@ router.post('/', async (req, res) => {
     zoom,
   });
   res.json({ reg: true });
-  res.renderComponent
   // res.status(200).json({ message: 'Card added' });
 });
 
