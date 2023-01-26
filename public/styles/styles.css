@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+}
+/* General */
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+p {
+  font-family: 'Ubuntu', sans-serif;
+}
+a {
+  text-decoration: none;
+  outline: none;
+}
+a:focus {
+  outline: none;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+/* Navigation */
+.navigation {
+  width: 100%;
+  background: #000;
+  padding: 1.5em;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2em;
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 800;
+  color: #fff;
+  overflow: hidden;
+  background: linear-gradient(to right, #25cfe8, #146e7b 50%, #fff 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 975ms ease;
+  text-decoration: none;
+}
+.logo:hover {
+  background-position: 0 100%;
+}
+
+/* Menu reg */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  justify-content: flex-end;
+}
+nav .kaumkan {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 5px;
+}
+
+nav ul li a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+  text-decoration: none;
+  padding: 10px 5px;
+  color: #7f7f7f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer;
+  outline: none;
+}
+
+nav ul li a:after {
+  background-color: #fff;
+  display: block;
+  content: '';
+  margin-top: 5px;
+  height: 1px;
+  width: 0%;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+nav ul li a:hover:after,
+nav ul li a:focus:after {
+  width: 100%;
+}
+
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type='checkbox'] {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  nav .menu-btn i {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: '\f00d';
+  }
+  nav ul {
+    position: fixed;
+    top: 90px;
+    left: -100%;
+    background: #fbfbfb;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: #25cfe8;
+  }
+}
+
+/* Menu left */
+.nav__container {
+  width: 25%;
+  padding: 2em;
+  margin: 1em;
+  background: #473cb5;
+  border-radius: 20px;
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  box-sizing: border-box;
+}
+.menu__title {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+.menu__title:after {
+  background-color: #6a61c3;
+  display: block;
+  content: '';
+  height: 1px;
+  width: 80%;
+  margin-top: 20px;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+.menu__title:hover:after,
+.menu__title:focus:after {
+  width: 100%;
+}
+.nav__container ul {
+  margin-top: 2em;
+}
+
+.nav__container ul li {
+  margin-top: 0.5em;
+  list-style: none;
+  margin-bottom: 15px;
+}
+.nav__container ul li a {
+  color: #978ee8;
+  font-size: 1.2em;
+  font-weight: 300;
+  font-family: 'Ubuntu', sans-serif;
+  box-sizing: border-box;
+  border-left: 3px solid transparent;
+  transition: 525ms;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.nav__container ul li a.active,
+.nav__container ul li a:hover {
+  color: #fff;
+  border-left: 3px solid rgb(255, 255, 255);
+}
+.counts {
+  display: flex;
+}
+.count {
+  margin-left: 10px;
+}
+.count::before {
+  content: '\005B';
+}
+.count::after {
+  content: '\005D';
+}
+.new-btn {
+  width: 15%;
+}
+.new-btn img {
+  width: 100%;
+  transition: all 1s ease-in-out;
+}
+.new-btn:hover img {
+  transform: scale(1.2);
+}
+/* List */
+.candidates {
+  display: flex;
+  width: 75%;
+}
+#cand_name {
+  width: 30%;
+  padding: 0em 0em 0em 1em;
+  margin: 1.5em 0;
+  display: flex;
+  flex-direction: column;
+}
+#cand_list {
+  width: 70%;
+  border-left: 1px solid #ebebeb;
+  padding: 0em 2em 2em;
+  margin: 1.5em 0em 1.5em 1.5em;
+  color: #383838;
+  box-sizing: border-box;
+}
+.cand__inside {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cand__info {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.cand__name {
+  width: 100%;
+  font-size: 1.3em;
+  font-weight: 700;
+  font-family: 'Ubuntu', sans-serif;
+  color: #303030;
+}
+.cand__img {
+  border-radius: 20px;
+  width: 35%;
+}
+.cand__info__inside {
+  display: flex;
+  margin-top: 1em;
+}
+.cand__info__left {
+  width: 35%;
+}
+.cand__info__right {
+  width: 65%;
+}
+.cand__info__left p {
+  color: #b1b1b1;
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.cand__info__right div {
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.cand__buttons {
+  background-color: #f7f7f7;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 1.5em 0;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+.cand__status {
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+#cand_name .cand__container {
+  padding: 10px;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 15px;
+}
+
+/* Select */
+select {
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #07b045;
+  border: none;
+  color: white;
+  appearance: none;
+  padding: 15px 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  text-align: center;
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-bottom-color 0.3s ease;
+}
+
+select:hover,
+select:focus {
+  color: #ffffff;
+  background-color: #07b045;
+  outline: none;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  background: #000;
+  padding: 1.5em;
+  font-size: 1em;
+  font-weight: 300;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Модальное окно */
+.modal-window {
+  display: inline-block;
+}
+.modal-window > .modal-trigger {
+  display: none;
+}
+.modal-window > .modal-trigger ~ .modal-overlay {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: fixed;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-window > .modal-trigger ~ .modal-container {
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  z-index: 110;
+  position: fixed;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  transform: translate(-50%, -50%);
+}
+.modal-window > .modal-trigger:checked ~ .modal-overlay,
+.modal-window > .modal-trigger:checked ~ .modal-container {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Кнопка */
+.btn-modal {
+  cursor: pointer;
+  padding: 1rem 3rem;
+}
+
+/* Содержимое модального окна */
+.modal-content {
+  overflow: hidden; /*Для прокрутки в модальном окне надо поменять на overflow: auto и добавить высоту окна*/
+  background-color: #fff;
+}
+.modal-content .modal-content-header,
+.modal-content .modal-content-body {
+  padding: 1rem 2rem;
+}
+
+/* Кнопка Закрыть */
+.modal-content .modal-content-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content .modal-content-footer .item {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+}
+.modal-content .modal-content-footer .item.action {
+  background-color: #83bec5;
+  cursor: pointer;
+}
+.modal-content .modal-content-footer .item.action:hover {
+  background-color: #aed9e1;
+}
+
+/*Hard code*/
+#cand_name .cand__container .cand__inside .cand__info .cand__info__inside {
+  display: none;
+}
+#cand_name .cand__buttons {
+  display: none;
+}
+#cand_name .cand__container .cand__inside {
+  margin: 1em 0;
+}
+#cand_name .cand__container .cand__inside .cand__img {
+  order: 0;
+  border-radius: 50%;
+}
+#cand_name .cand__container .cand__inside .cand__info {
+  order: 1;
+  padding-left: 1em;
+}
+#cand_name .cand__container .cand__inside .cand__info .cand__name {
+  padding-left: 0.5em;
+}
