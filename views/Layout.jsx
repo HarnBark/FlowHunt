@@ -22,6 +22,7 @@ function Layout({ title, children }) {
         </div>
         <script defer src="js/menu.js" />
         <script defer src="js/chooseCandidate.js" />
+        <script defer src="/js/showcard.js" />
       </body>
     </html>
   );

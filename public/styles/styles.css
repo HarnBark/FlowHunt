@@ -167,7 +167,7 @@ input[type='checkbox'] {
 .nav__container {
   width: 25%;
   padding: 2em;
-  margin: 1em;
+  margin: 1.5em;
   background: #473cb5;
   border-radius: 20px;
   color: #fff;
@@ -232,7 +232,14 @@ input[type='checkbox'] {
   content: '\005D';
 }
 .new-btn {
-  width: 20%;
+  width: 15%;
+}
+.new-btn img {
+  width: 100%;
+  transition: all 1s ease-in-out;
+}
+.new-btn:hover img {
+  transform: scale(1.2);
 }
 /* List */
 .candidates {
@@ -241,10 +248,17 @@ input[type='checkbox'] {
 }
 #cand_name {
   width: 30%;
-  padding: 0em 0em 0em 1em;
+  padding: 0;
   margin: 1.5em 0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  overflow-y: scroll;
+  height: 400px;
+}
+.overflow {
+  min-height: 600px;
 }
 #cand_list {
   width: 70%;
@@ -317,6 +331,29 @@ input[type='checkbox'] {
   margin-bottom: 15px;
 }
 
+.cand_name_container {
+  padding: 10px;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cand_name_container img {
+  border-radius: 50%;
+  width: 35%;
+}
+.cand_name_container div {
+  width: 60%;
+  font-size: 1.3em;
+  font-weight: 500;
+  font-family: 'Ubuntu', sans-serif;
+  color: #303030;
+}
+
+.cardGrey {
+  background: #777;
+}
 /* Select */
 select {
   font-size: 1.2em;
@@ -354,24 +391,72 @@ footer {
   box-sizing: border-box;
 }
 
-/*Hard code*/
-#cand_name .cand__container .cand__inside .cand__info .cand__info__inside {
+/* Модальное окно */
+.modal-window {
+  display: inline-block;
+}
+.modal-window > .modal-trigger {
   display: none;
 }
-#cand_name .cand__buttons {
-  display: none;
+.modal-window > .modal-trigger ~ .modal-overlay {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: fixed;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-#cand_name .cand__container .cand__inside {
-  margin: 1em 0;
+.modal-window > .modal-trigger ~ .modal-container {
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  z-index: 110;
+  position: fixed;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  transform: translate(-50%, -50%);
 }
-#cand_name .cand__container .cand__inside .cand__img {
-  order: 0;
-  border-radius: 50%;
+.modal-window > .modal-trigger:checked ~ .modal-overlay,
+.modal-window > .modal-trigger:checked ~ .modal-container {
+  opacity: 1;
+  visibility: visible;
 }
-#cand_name .cand__container .cand__inside .cand__info {
-  order: 1;
-  padding-left: 1em;
+
+/* Кнопка */
+.btn-modal {
+  cursor: pointer;
+  padding: 1rem 3rem;
 }
-#cand_name .cand__container .cand__inside .cand__info .cand__name {
-  padding-left: 0.5em;
+
+/* Содержимое модального окна */
+.modal-content {
+  overflow: hidden; /*Для прокрутки в модальном окне надо поменять на overflow: auto и добавить высоту окна*/
+  background-color: #fff;
+}
+.modal-content .modal-content-header,
+.modal-content .modal-content-body {
+  padding: 1rem 2rem;
+}
+
+/* Кнопка Закрыть */
+.modal-content .modal-content-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content .modal-content-footer .item {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+}
+.modal-content .modal-content-footer .item.action {
+  background-color: #83bec5;
+  cursor: pointer;
+}
+.modal-content .modal-content-footer .item.action:hover {
+  background-color: #aed9e1;
 }

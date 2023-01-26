@@ -38,11 +38,12 @@ module.exports = {
       },
       status: {
         type: Sequelize.TEXT,
-        allowNull: false,
+
+        // allowNull: false,
       },
       date: {
         type: Sequelize.DATE,
-        allowNull: false,
+        // allowNull: false,
       },
       createdAt: {
         allowNull: false,

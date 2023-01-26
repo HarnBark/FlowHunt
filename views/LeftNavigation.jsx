@@ -1,4 +1,5 @@
 const React = require('react');
+const AddCandidate = require('./AddCandidate');
 
 function LeftNavigation({ data }) {
   return (
@@ -96,8 +97,31 @@ function LeftNavigation({ data }) {
           </a>
         </li>
       </ul>
-      <div className="new-btn">
-        <img src="/img/cross-icon.svg" alt="Добавить" />
+      <div className="modal-window">
+        <input type="checkbox" className="modal-trigger" id="modal-window" />
+        <label className="modal-overlay" htmlFor="modal-window" />
+        <label className="btn-modal" htmlFor="modal-window">
+          <div className="new-btn">
+            <img src="/img/cross-icon.svg" alt="Добавить" />
+          </div>
+        </label>
+
+        <div className="modal-container">
+          <div className="modal-content">
+            <div className="modal-content-header">
+              <h3 className="modal-content-title">Lorem ipsum</h3>
+            </div>
+            <div className="modal-content-body">
+              <AddCandidate />
+            </div>
+
+            <div className="modal-content-footer">
+              <label htmlFor="modal-window" className="item action">
+                Закрыть
+              </label>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
