@@ -16,7 +16,7 @@ router.get('/:id', async (req, res) => {
       doctype: false,
     });
   } catch (error) {
-    res.text('error');
+    res.send('error');
   }
 });
 
