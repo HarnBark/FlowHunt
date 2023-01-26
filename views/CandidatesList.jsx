@@ -1,20 +1,19 @@
 const React = require('react');
 const Layout = require('./Layout');
-const Card = require('./CandidateCard');
+const CandidateCard = require('./CandidateCard');
+const CandidateSmallCard = require('./CandidateSmallCard');
 
 function CandidatesList({ title, candidatesDB }) {
   return (
     // <Layout title={title}>
     <div className="candidates">
-      <div id="cand_name">
+      <div id="cand_name" className="overflow">
         {candidatesDB.map((candidate) => (
-          <Card key={candidate.id} candidate={candidate} />
+          <CandidateSmallCard key={candidate.id} candidate={candidate} />
         ))}
       </div>
       <div id="cand_list">
-        {candidatesDB.map((candidate) => (
-          <Card key={candidate.id} candidate={candidate} />
-        ))}
+        <CandidateCard candidate={candidatesDB[0]} />
       </div>
     </div>
     // </Layout>
