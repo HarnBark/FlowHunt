@@ -1,5 +1,6 @@
 const React = require('react');
 const Layout = require('./Layout');
+
 const CandidateCard = require('./CandidateCard');
 const CandidateSmallCard = require('./CandidateSmallCard');
 
