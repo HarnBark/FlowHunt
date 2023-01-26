@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const React = require('react');
+const AddCandidate = require('./AddCandidate');
 
 function LeftNavigation() {
   return (
@@ -113,7 +114,7 @@ function LeftNavigation() {
               <h3 className="modal-content-title">Lorem ipsum</h3>
             </div>
             <div className="modal-content-body">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <AddCandidate />
             </div>
 
             <div className="modal-content-footer">
