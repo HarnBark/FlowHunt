@@ -1,6 +1,4 @@
 const express = require('express');
-const React = require('react');
-const ReactDOMServer = require('react-dom/server');
 const { Candidate } = require('../db/models');
 const CandidateCard = require('../views/CandidateCard');
 

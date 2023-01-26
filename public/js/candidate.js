@@ -30,7 +30,7 @@ document.querySelector('#addcand').addEventListener('submit', async (e) => {
   // </div>
   //  `;
   const candHtml = await res.text();
-  const parent = document.querySelector('.cand_name');
+  const parent = document.querySelector('#cand_name');
   const image = newSmallCard.querySelector('img');
   const nameDiv = newSmallCard.querySelector('div');
   image.src = photo.value;
