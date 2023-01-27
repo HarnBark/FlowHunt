@@ -36,11 +36,6 @@ router.get('/:status', async (req, res) => {
   }
 });
 
-router.get('/candidate/:id', async (req, res) => {
-  const { id } = req.params;
-  const candidate = await Candidate.findOne({ where: { id }, raw: true });
-  res.renderComponent(CandidateCard, { candidate }, { doctype: false });
-});
 
 router.post('/', async (req, res) => {
   // eslint-disable-next-line object-curly-newline
