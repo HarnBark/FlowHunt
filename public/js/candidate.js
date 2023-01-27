@@ -17,6 +17,10 @@ document.querySelector('#addcand').addEventListener('submit', async (e) => {
     }),
   });
   const candHtml = await res.text();
-  document.querySelector('#cand_name').insertAdjacentHTML('beforeend', candHtml);
 
+  document
+    .querySelector('#cand_name')
+    .insertAdjacentHTML('beforeend', candHtml);
+
+  e.target.reset();
 });

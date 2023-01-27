@@ -6,21 +6,39 @@ function AddCandidate() {
     <>
       <div className="cont_form">
         <form action="/" method="POST" id="addcand" className="form_add">
-          <label> Name</label>
-          <input name="name" type="text" required />
-          <label> Photo</label>
-          <input name="photo" type="text" required />
-          <label> Email</label>
-          <input name="email" type="text" required />
-          <label> Experience</label>
-          <input name="experience" type="text" required />
-          <label> Phone</label>
-          <input name="phone" type="text" required />
-          <label> Skype</label>
-          <input name="skype" type="text" required />
-          <label> Zoom</label>
-          <input name="zoom" type="text" required />
-          <button type="submit">Добавить</button>
+          <div>
+            <input id="name" name="name" type="text" required />
+            <label htmlFor="name">Name</label>
+          </div>
+          <div>
+            <input id="photo" name="photo" type="text" required />
+            <label htmlFor="photo">Photo</label>
+          </div>
+          <div>
+            <input id="email" name="email" type="text" required />
+            <label htmlFor="email">Email</label>
+          </div>
+          <div>
+            <input id="experience" name="experience" type="text" required />
+            <label htmlFor="experience">Experience</label>
+          </div>
+          <div>
+            <input id="phone" name="phone" type="text" required />
+            <label htmlFor="phone">Phone</label>
+          </div>
+          <div>
+            <input id="skype" name="skype" type="text" required />
+            <label htmlFor="skype">Skype</label>
+          </div>
+          <div>
+            <input id="zoom" name="zoom" type="text" required />
+            <label htmlFor="zoom">Zoom</label>
+          </div>
+          <div className="close-block">
+            <button type="submit" className="close">
+              Добавить
+            </button>
+          </div>
           <p id="add" />
         </form>
       </div>
