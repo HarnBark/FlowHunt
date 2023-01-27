@@ -14,12 +14,13 @@ const PORT = process.env.PORT || 3000;
 
 const mainRouter = require('./routes/main.routes');
 
+
+const indexRouter = require('./routes/index.routes');
+const candidateRouter = require('./routes/candidate.routes')
 const regRoute = require('./routes/reg.routes');
 const logoutRoute = require('./routes/logout.routes');
 const authRoutes = require('./routes/authRoutes');
 const cardShowRouter = require('./routes/cardshow.routes');
-
-
 
 const ssr = require('./middlewares/ssr');
 const sessionConfig = require('./config/session');
@@ -30,16 +31,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(ssr);
 
+app.use('/', indexRouter);
+app.use('/main', mainRouter);
+app.use('/candidate', candidateRouter);
+
 app.use(cookieParser());
 app.use(session(sessionConfig));
 
 app.use('/reg', regRoute);
 app.use('/logout', logoutRoute);
 app.use('/auth', authRoutes);
-
-// app.use('/', mainRouter);
-// app.use('/main', cardShowRouter);
-
 
 
 const start = async () => {
