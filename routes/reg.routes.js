@@ -9,14 +9,14 @@ router
     res.renderComponent(Reg, { title: 'Регистрация' });
   })
   .post('/', async (req, res) => {
-    const {
-      login, email, password1, passwordRepeat,
-    } = req.body;
-    console.log(req.body)
+    const { login, email, password1, passwordRepeat } = req.body;
+    // console.log(req.body);
     let user;
     try {
       if (!login || !email || !password1 || !passwordRepeat) {
-        return res.status(400).json({ message: 'Необходимо заполнить все поля', status: false });
+        return res
+          .status(400)
+          .json({ message: 'Необходимо заполнить все поля', status: false });
       }
       if (password1 !== passwordRepeat) {
         return res
@@ -25,11 +25,18 @@ router
       }
       user = await User.findOne({ where: { email } });
       if (user) {
-        return res.status(400).json({ message: 'Пользователь с таким e-mail уже зарегистрирован!', status: false });
+        return res
+          .status(400)
+          .json({
+            message: 'Пользователь с таким e-mail уже зарегистрирован!',
+            status: false,
+          });
       }
       const password = await bcrypt.hash(password1, 10);
       const newUser = await User.create({
-        login, email, password,
+        login,
+        email,
+        password,
       });
 
       req.session.user_id = newUser.id;
@@ -40,4 +47,3 @@ router
   });
 
 module.exports = router;
-

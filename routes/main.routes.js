@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Candidate } = require('../db/models');
+// const { User } = require('../db/models');
 const CandidateSmallCard = require('../views/CandidateSmallCard');
 const Main = require('../views/Main');
-const CandidateCard = require('../views/CandidateCard')
+const CandidateCard = require('../views/CandidateCard');
 
 router.get('/', async (req, res) => {
   try {
@@ -12,6 +13,16 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+// router.get('/', async (req, res) => {
+//   let user;
+//   let name;
+//   if (req.session.user_id) {
+//     user = await User.findOne({ where: req.session.user_id });
+//     name = user.login;
+//     const curUser = req.session.user_id;
+//   }
+//   res.renderComponent(Main, { title: 'Главная', name });
+// })
 
 router.get('/:status', async (req, res) => {
   try {
@@ -47,7 +58,9 @@ router.post('/', async (req, res) => {
     skype,
     zoom,
   });
-  res.renderComponent(CandidateSmallCard, candidate = { candidate }, { doctype: false });
+  res.renderComponent(CandidateSmallCard, (candidate = { candidate }), {
+    doctype: false,
+  });
   // res.json({ reg: true });
   // res.status(200).json({ message: 'Card added' });
 });
