@@ -10,7 +10,6 @@ function Main({ title, data }) {
       <Navigation />
       <div className="container">
         <LeftNavigation data={data} />
-
         <CandidatesList candidatesDB={data} />
       </div>
     </Layout>

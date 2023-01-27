@@ -38,12 +38,9 @@ module.exports = {
       },
       status: {
         type: Sequelize.TEXT,
-
-        // allowNull: false,
       },
       date: {
         type: Sequelize.DATE,
-        // allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -52,6 +49,13 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+      },
+      recruterId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Recruters',
+          key: 'id',
+        },
       },
     });
   },

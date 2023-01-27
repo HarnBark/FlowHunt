@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 const React = require('react');
+const RecruterList = require('./RecrutersList');
 
-function CandidateCard({ candidate }) {
+function CandidateCard({ candidate, recruter }) {
   return (
     <div className="cand__container">
       <div className="cand__inside">
@@ -14,6 +15,7 @@ function CandidateCard({ candidate }) {
               <p>Телефон:</p>
               <p>Skype:</p>
               <p>Zoom:</p>
+              <p>Рекрутер:</p>
             </div>
             <div className="cand__info__right">
               <div>{candidate.email}</div>
@@ -21,25 +23,15 @@ function CandidateCard({ candidate }) {
               <div>{candidate.phone}</div>
               <div>{candidate.skype}</div>
               <div>{candidate.zoom}</div>
+              <div id="recruter_Id" />
             </div>
           </div>
         </div>
         <img src={candidate.photo} alt="candidate" className="cand__img" />
       </div>
-
       <div className="cand__buttons">
         <div className="cand__status">{candidate.status}</div>
-        <select>
-          <option>Сменить этап</option>
-          <option>Отправлено приглашение</option>
-          <option>Звонок-скрининг</option>
-          <option>Видеоинтервью</option>
-          <option>Резюме у заказчика</option>
-          <option>Интервью с заказчиком</option>
-          <option>Выставлен оффер</option>
-          <option>Выход на работу</option>
-          <option>Отказ</option>
-        </select>
+        <RecruterList />
       </div>
     </div>
   );

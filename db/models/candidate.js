@@ -4,8 +4,8 @@ const {
 
 module.exports = (sequelize, DataTypes) => {
   class Candidate extends Model {
-    static associate(models) {
-      // define association here
+    static associate({ Recruter }) {
+      this.belongsTo(Recruter, { foreignKey: 'recruterId' });
     }
   }
   Candidate.init({
@@ -39,11 +39,16 @@ module.exports = (sequelize, DataTypes) => {
     },
     status: {
       type: DataTypes.TEXT,
-      // allowNull: false,
     },
     date: {
       type: DataTypes.DATE,
-      // allowNull: false,
+    },
+    recruterId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Recruters',
+        key: 'id',
+      },
     },
   }, {
     sequelize,
