@@ -26,10 +26,9 @@ router
       if (user) {
         return res.status(400).json({ message: 'Пользователь с таким e-mail уже зарегистрирован!', status: false });
       }
-      const points = 0;
       const password = await bcrypt.hash(password1, 10);
       const newUser = await User.create({
-        login, email, password, points
+        login, email, password,
       });
 
       req.session.user_id = newUser.id;
