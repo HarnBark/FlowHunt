@@ -7,7 +7,7 @@ const LeftNavigation = require('./LeftNavigation');
 function Main({ title, data }) {
   return (
     <Layout title={title}>
-      <Navigation />
+      <Navigation data={data} />
       <div className="container">
         <LeftNavigation data={data} />
 
