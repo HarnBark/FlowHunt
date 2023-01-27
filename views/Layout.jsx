@@ -20,7 +20,7 @@ function Layout({ title, children }) {
           {children}
           <footer>&copy; HuntFlow 2022</footer>
         </div>
-        <script defer src="js/menu.js" />
+        <script defer src="js/modal.js" />
         <script defer src="js/chooseCandidate.js" />
         <script defer src="/js/showcard.js" />
       </body>

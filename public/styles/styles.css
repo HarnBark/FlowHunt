@@ -177,6 +177,7 @@ input[type='checkbox'] {
 .menu__title {
   font-weight: 400;
   font-size: 1.5em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 .menu__title:after {
   background-color: #6a61c3;
@@ -248,12 +249,11 @@ input[type='checkbox'] {
 }
 #cand_name {
   width: 30%;
-  padding: 0;
+  padding: 3px;
   margin: 1.5em 0;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  border: 1px solid #000;
   overflow-y: scroll;
   height: 400px;
 }
@@ -283,7 +283,6 @@ input[type='checkbox'] {
   width: 60%;
 }
 .cand__name {
-  width: 100%;
   font-size: 1.3em;
   font-weight: 700;
   font-family: 'Ubuntu', sans-serif;
@@ -331,10 +330,26 @@ input[type='checkbox'] {
 
 #cand_name .cand__container {
   padding: 10px;
-  border-bottom: 1px solid #ebebeb;
+  border: 1px solid #ebebeb;
   margin-bottom: 15px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px 0px rgb(0 0 0 / 10%);
 }
 
+#cand_name .cand__container:hover {
+  box-shadow: none;
+}
+
+#cand_name .cand__container img {
+  border-radius: 50%;
+  transition: 1s;
+}
+
+#cand_name .cand__container .cand__name {
+  box-sizing: border-box;
+  padding-left: 1em;
+}
 .cand_name_container {
   padding: 10px;
   border-bottom: 1px solid #ebebeb;
@@ -357,6 +372,13 @@ input[type='checkbox'] {
 
 .cardGrey {
   background: #f7f7f7;
+  color: #8f8c8c;
+  border: 1px solid #9b91ff !important;
+  transition: 1s;
+}
+
+.cardGrey .cand__name {
+  color: #6d6d6d;
 }
 /* Select */
 select {
@@ -396,71 +418,163 @@ footer {
 }
 
 /* Модальное окно */
-.modal-window {
-  display: inline-block;
+.close-block {
+  display: flex;
 }
-.modal-window > .modal-trigger {
+.close-block button {
+  padding: 1em 2em;
+  margin: 0;
+  font-size: 1em;
+  font-weight: 300;
+}
+button {
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #463bb5;
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 10px;
+  transition: 1s;
+  box-shadow: 1px 1px 2px 0px rgb(0 0 0 / 10%);
+}
+.close:hover {
+  background-color: #1aa4b9;
+  box-shadow: none;
+}
+button:hover {
+  background-color: #1aa4b9;
+  box-shadow: none;
+}
+
+/* Modal Two */
+.modal {
   display: none;
-}
-.modal-window > .modal-trigger ~ .modal-overlay {
-  top: 0;
+  position: fixed;
+  z-index: 1;
+  padding-top: 5%;
   left: 0;
-  opacity: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  z-index: 100;
-  position: fixed;
-  visibility: hidden;
-  transition: opacity 0.3s;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.modal-window > .modal-trigger ~ .modal-container {
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-  z-index: 110;
-  position: fixed;
-  visibility: hidden;
-  transition: opacity 0.3s;
-  transform: translate(-50%, -50%);
-}
-.modal-window > .modal-trigger:checked ~ .modal-overlay,
-.modal-window > .modal-trigger:checked ~ .modal-container {
-  opacity: 1;
-  visibility: visible;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Кнопка */
-.btn-modal {
-  cursor: pointer;
-  padding: 1rem 3rem;
-}
-
-/* Содержимое модального окна */
 .modal-content {
-  overflow: hidden; /*Для прокрутки в модальном окне надо поменять на overflow: auto и добавить высоту окна*/
-  background-color: #fff;
-}
-.modal-content .modal-content-header,
-.modal-content .modal-content-body {
-  padding: 1rem 2rem;
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 50%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
 }
 
-/* Кнопка Закрыть */
-.modal-content .modal-content-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
-.modal-content .modal-content-footer .item {
-  flex: 1;
-  padding: 1rem;
-  text-align: center;
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
-.modal-content .modal-content-footer .item.action {
-  background-color: #83bec5;
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
   cursor: pointer;
 }
-.modal-content .modal-content-footer .item.action:hover {
-  background-color: #aed9e1;
+
+.modal-body {
+  padding: 1em;
+  background-color: #f1eeee;
+  border-radius: 20px;
+  border: 1px solid #463bb5;
+}
+
+#myBtn {
+  background-color: transparent;
+  padding: 0;
+  margin-top: 20px;
+  box-shadow: none;
+}
+
+/* Form */
+.cont_form div {
+  position: relative;
+  width: 95%;
+  height: 15%;
+  margin-top: 1em;
+}
+input {
+  width: 100%;
+  height: 30%;
+  padding: 1em;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #666;
+  font-weight: bold;
+  outline: none;
+  border-radius: 5px;
+}
+input:first-of-type {
+  margin-bottom: 1em;
+  outline: none;
+}
+input:focus + label,
+input:valid + label {
+  top: -15px;
+  left: 3px;
+  width: 30%;
+  height: 10%;
+  padding: 0.8em 3.5em;
+  outline: none;
+}
+label {
+  position: absolute;
+  top: -15px;
+  left: 3px;
+  width: 20%;
+  height: 10%;
+  padding: 0.8em 3.5em;
+  background-color: #473cb5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+@media (min-width: 500px) {
+  label {
+    top: 3px;
+    left: 3px;
+    height: 67%;
+    padding: 0;
+  }
 }
