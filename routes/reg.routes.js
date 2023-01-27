@@ -12,6 +12,7 @@ router
     const {
       login, email, password1, passwordRepeat,
     } = req.body;
+    console.log(req.body)
     let user;
     try {
       if (!login || !email || !password1 || !passwordRepeat) {

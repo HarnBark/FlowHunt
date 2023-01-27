@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 3000;
 
 const mainRouter = require('./routes/main.routes');
 const regRoute = require('./routes/reg.routes');
-
 const cardShowRouter = require('./routes/cardshow.routes');
+
 const ssr = require('./middlewares/ssr');
 
 config(app);
