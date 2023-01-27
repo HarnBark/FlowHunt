@@ -9,7 +9,6 @@ function Main({ title, data, user }) {
     <Layout title={title} user={user}>
       <div className="container">
         <LeftNavigation data={data} />
-
         <CandidatesList candidatesDB={data} />
       </div>
     </Layout>

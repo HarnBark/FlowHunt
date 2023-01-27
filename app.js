@@ -20,6 +20,7 @@ const regRoute = require('./routes/reg.routes');
 const logoutRoute = require('./routes/logout.routes');
 const authRoutes = require('./routes/authRoutes');
 const cardShowRouter = require('./routes/cardshow.routes');
+const recruterRoutes = require('./routes/recruter.routes');
 
 const ssr = require('./middlewares/ssr');
 const getUser = require('./middlewares/auth');
@@ -33,11 +34,12 @@ app.use(session(sessionConfig));
 app.use(getUser.resLocals);
 app.use(ssr);
 
+app.use('/', recruterRoutes);
+
+
 app.use('/', indexRouter);
 app.use('/main', mainRouter);
 app.use('/candidate', candidateRouter);
-
-
 
 app.use('/reg', regRoute);
 app.use('/logout', logoutRoute);

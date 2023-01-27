@@ -20,11 +20,13 @@ function Layout({ title, children, user }) {
         <Navigation user={user}/>
         <div className="body__container">
           {children}
-          <footer>&copy; HuntFlow 2022</footer>
+          <footer>&copy; HuntFlow 2023</footer>
         </div>
         <script defer src="/js/modal.js" />
         <script defer src="/js/chooseCandidate.js" />
         <script defer src="/js/showcard.js" />
+
+        <script defer src="/js/recruter.js" />
         <script defer src="/js/logoRego.js" />
       </body>
     </html>

@@ -5,7 +5,6 @@ document.querySelector('#cand_name').addEventListener('click', async (e) => {
     color.classList.remove('cardGrey');
   }
   card.classList.add('cardGrey');
-
   const cardId = card.dataset.id;
   const res = await fetch(`/candidate/${cardId}`, {
     method: 'GET',
