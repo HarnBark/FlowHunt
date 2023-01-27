@@ -3,12 +3,11 @@ const morgan = require('morgan');
 const ssr = require('../middlewares/ssr');
 
 const serverConfig = (app) => {
-    app.use(morgan('dev'));
-    app.use(express.json());
-    app.use(express.urlencoded({ extended: true }));
-    app.use(express.static('public'));
-    app.use(ssr);
-  };
+  app.use(morgan('dev'));
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.static('public'));
+  app.use(ssr);
+};
 
-  module.exports = serverConfig
-
+module.exports = serverConfig;

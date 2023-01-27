@@ -1,6 +1,6 @@
 const React = require('react');
 
-function Layout({ title, children }) {
+function Layout({ title, children, user }) {
   return (
     <html lang="ru">
       <head>
@@ -23,6 +23,7 @@ function Layout({ title, children }) {
         <script defer src="js/modal.js" />
         <script defer src="js/chooseCandidate.js" />
         <script defer src="/js/showcard.js" />
+        <script defer src="/js/logoRego.js" />
       </body>
     </html>
   );
