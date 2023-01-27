@@ -11,6 +11,7 @@ router
   .post('/', async (req, res) => {
     const { login, email, password1, passwordRepeat } = req.body;
     // console.log(req.body);
+    console.log(login, email, password1, passwordRepeat);
     let user;
     try {
       if (!login || !email || !password1 || !passwordRepeat) {
@@ -25,21 +26,19 @@ router
       }
       user = await User.findOne({ where: { email } });
       if (user) {
-        return res
-          .status(400)
-          .json({
-            message: 'Пользователь с таким e-mail уже зарегистрирован!',
-            status: false,
-          });
+        return res.status(400).json({
+          message: 'Пользователь с таким e-mail уже зарегистрирован!',
+          status: false,
+        });
       }
       const password = await bcrypt.hash(password1, 10);
       const newUser = await User.create({
-        login,
+        name: login,
         email,
         password,
       });
 
-      req.session.user_id = newUser.id;
+      req.session.user_id = newUser.name;
       res.status(201).json({ message: 'success', status: true });
     } catch (e) {
       res.json({ message: e.message });

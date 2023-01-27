@@ -20,7 +20,7 @@ router
       const validPassword = await bcrypt.compare(password, logUser.password);
       if (logUser) {
         if (validPassword) {
-          req.session.user_id = logUser.id;
+          req.session.user_id = logUser.name;
           return res.json({ status: 'succes', url: '/' });
         }
         return res

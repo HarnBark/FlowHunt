@@ -1,4 +1,5 @@
 const React = require('react');
+const Navigation = require('./Navigation');
 
 function Layout({ title, children, user }) {
   return (
@@ -16,12 +17,13 @@ function Layout({ title, children, user }) {
       </head>
       <link />
       <body>
+        <Navigation user={user}/>
         <div className="body__container">
           {children}
           <footer>&copy; HuntFlow 2022</footer>
         </div>
-        <script defer src="js/modal.js" />
-        <script defer src="js/chooseCandidate.js" />
+        <script defer src="/js/modal.js" />
+        <script defer src="/js/chooseCandidate.js" />
         <script defer src="/js/showcard.js" />
         <script defer src="/js/logoRego.js" />
       </body>

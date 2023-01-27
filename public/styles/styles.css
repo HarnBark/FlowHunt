@@ -60,27 +60,27 @@ a:focus {
 }
 
 /* Menu reg */
-nav {
+.navigation nav {
   display: flex;
   flex-wrap: wrap;
   margin: 10px 0;
   justify-content: flex-end;
 }
-nav .kaumkan {
+.navigation nav .kaumkan {
   color: #fff;
   font-size: 35px;
   font-weight: 600;
 }
-nav ul {
+.navigation nav ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
 }
-nav ul li {
+.men {
   margin: 0 5px;
 }
 
-nav ul li a {
+.men {
   font-family: 'Raleway', sans-serif;
   font-size: 1em;
   text-decoration: none;
@@ -95,8 +95,8 @@ nav ul li a {
   outline: none;
 }
 
-nav ul li a:after {
-  background-color: #fff;
+.men:after {
+  background-color: #7f7f7f;
   display: block;
   content: '';
   margin-top: 5px;
@@ -106,12 +106,12 @@ nav ul li a:after {
   -moz--transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
 }
-nav ul li a:hover:after,
-nav ul li a:focus:after {
+.men:hover:after,
+.men:focus:after {
   width: 100%;
 }
 
-nav .menu-btn i {
+.navigation nav .menu-btn i {
   color: #fff;
   font-size: 22px;
   cursor: pointer;
@@ -415,6 +415,8 @@ footer {
   font-weight: 300;
   color: #fff;
   box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
 }
 
 /* Модальное окно */
@@ -577,4 +579,23 @@ label {
     height: 67%;
     padding: 0;
   }
+}
+
+.form__container {
+  margin: 1em 1.5em;
+}
+.main__title {
+  font-size: 1.5em;
+  font-weight: 700;
+  font-family: 'Ubuntu', sans-serif;
+  color: #303030;
+  margin-bottom: 2em;
+}
+.login {
+  width: 50%;
+  padding: 2em;
+  background-color: #f1eeee;
+  border-radius: 20px;
+  border: 1px solid #463bb5;
+  margin: auto;
 }

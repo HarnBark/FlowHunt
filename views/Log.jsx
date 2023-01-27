@@ -7,21 +7,28 @@ module.exports = function Login({ title }) {
       <div className="container form__container">
         <div className="login">
           <h1 className="main__title">Вход</h1>
-          <form id="loginForm" action="/auth" method="post">
-            <p className="auth">E-mail:</p>
-            <input name="email" type="email" placeholder="example@site.com" />
-            <p className="auth">Пароль:</p>
-            <input
-              name="password"
-              type="password"
-              minLength="5"
-              placeholder="Пароль"
-            />
-            <br />
-            <p className="auth">
-              <button type="submit">Войти</button>
-            </p>
-          </form>
+          <div className="cont_form">
+            <form id="loginForm" action="/auth" method="post">
+              <div>
+                <input id="email" name="email" type="email" />
+                <label htmlFor="email">E-mail</label>
+              </div>
+
+              <div>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  minLength="5"
+                />
+                <label htmlFor="password">Пароль</label>
+              </div>
+
+              <p className="auth">
+                <button type="submit">Войти</button>
+              </p>
+            </form>
+          </div>
           <div className="errorBlock"></div>
         </div>
       </div>
