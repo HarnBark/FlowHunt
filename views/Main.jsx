@@ -12,7 +12,6 @@ function Main({ title, data, user }) {
 
       <div className="container">
         <LeftNavigation data={data} />
-
         <CandidatesList candidatesDB={data} />
       </div>
     </Layout>

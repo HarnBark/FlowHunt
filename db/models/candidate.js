@@ -1,50 +1,57 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Candidate extends Model {}
-  Candidate.init(
-    {
-      name: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-      email: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-      experience: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      photo: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-      phone: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-      skype: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-      zoom: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-      status: {
-        type: DataTypes.TEXT,
-        // allowNull: false,
-      },
-      date: {
-        type: DataTypes.DATE,
-        // allowNull: false,
+  class Candidate extends Model {
+    static associate({ Recruter }) {
+      this.belongsTo(Recruter, { foreignKey: 'recruterId' });
+    }
+  }
+  Candidate.init({
+    name: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    experience: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    photo: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    phone: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    skype: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    zoom: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    status: {
+      type: DataTypes.TEXT,
+    },
+    date: {
+      type: DataTypes.DATE,
+    },
+    recruterId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Recruters',
+        key: 'id',
       },
     },
-    {
-      sequelize,
-      modelName: 'Candidate',
-    },
-  );
+  }, {
+    sequelize,
+    modelName: 'Candidate',
+  });
+
   return Candidate;
 };

@@ -1,8 +1,6 @@
-const express = require('express');
+const router = require('express').Router();
 const { Candidate } = require('../db/models');
 const CandidateCard = require('../views/CandidateCard');
-
-const router = express.Router();
 
 router.get('/:id', async (req, res) => {
   try {
@@ -10,7 +8,7 @@ router.get('/:id', async (req, res) => {
       where: { id: req.params.id },
       raw: true,
     });
-    //console.log(candidate);
+    // console.log(candidate);
     res.renderComponent(CandidateCard, (candidate = { candidate }), {
       doctype: false,
     });
