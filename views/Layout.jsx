@@ -1,6 +1,6 @@
 const React = require('react');
 
-function Layout({ title, children }) {
+function Layout({ title, children, user }) {
   return (
     <html lang="ru">
       <head>
@@ -20,10 +20,12 @@ function Layout({ title, children }) {
           {children}
           <footer>&copy; HuntFlow 2023</footer>
         </div>
-        <script defer src="js/menu.js" />
+        <script defer src="js/modal.js" />
         <script defer src="js/chooseCandidate.js" />
         <script defer src="/js/showcard.js" />
+
         <script defer src="/js/recruter.js" />
+        <script defer src="/js/logoRego.js" />
       </body>
     </html>
   );

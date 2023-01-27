@@ -8,16 +8,15 @@ function Navigation() {
         HuntFlow
       </a>
       <nav>
-        <input type="checkbox" id="click" />
-        <label htmlFor="click" className="menu-btn">
-          <i className="fas fa-bars" />
-        </label>
         <ul>
           <li>
-            <a href="/log">LogIn</a>
+            <a href="/reg">LogIn</a>
           </li>
           <li>
             <a href="/logout">LogOut</a>
+          </li>
+          <li>
+            <a href="/auth">Войти</a>
           </li>
         </ul>
       </nav>
