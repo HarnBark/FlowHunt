@@ -6,7 +6,7 @@ const Main = require('../views/Main');
 const CandidateCard = require('../views/CandidateCard');
 
 router.get('/', async (req, res) => {
-  try {
+  try { 
     const data = await Candidate.findAll({ raw: true });
     res.renderComponent(Main, { title: 'HuntFlow', data });
   } catch (error) {

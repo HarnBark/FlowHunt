@@ -1,4 +1,4 @@
-// const { User } = require('../db/models');
+const { User } = require('../db/models');
 
 // // промежуточная функция для очистки куки при истёкшей сессии на сервере
 // const cookiesCleaner = (req, res, next) => {
@@ -20,23 +20,26 @@
 // };
 
 // // промежуточная функция наполнения локальных переменных
-// const resLocals = (req, res, next) => {
-//   if (req.session.userid) {
-//     res.locals.userId = req.session.userid;
-//   }
+const resLocals = (req, res, next) => {
+  if (req.session?.user_id) {
+    res.locals.user = req.session.user_id;
+  }
 
-//   next();
-// };
+  next();
+};
 
-// // промежуточная функция поиска пользователя в БД по ID из сессии
+// // // промежуточная функция поиска пользователя в БД по ID из сессии
 // const getUser = async (req, res, next) => {
-//   if (req.session.userid) {
-//     res.app.locals.user = await User.findByPk(Number(req.session.userid), { raw: true }).name;
+//   if (req.session?.user_id) {
+//     res.locals.user = await User.findByPk(Number(req.session.user_id), {
+//       raw: true,
+//     });
 //   }
-
+//   console.log(res.locals.user);
 //   next();
 // };
 
 // module.exports = {
 //   cookiesCleaner, sessionChecker, resLocals, getUser,
 // };
+module.exports = { resLocals };
