@@ -10,7 +10,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const mainRouter = require('./routes/main.routes');
-// const cardShowRouter = require('./routes/cardshow.routes');
+const cardShowRouter = require('./routes/cardshow.routes');
+const indexRouter = require('./routes/index.routes');
+const candidateRouter = require('./routes/candidate.routes')
 const ssr = require('./middlewares/ssr');
 
 config(app);
@@ -18,9 +20,10 @@ config(app);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(ssr);
-// app.use('/main', mainRouter);
 // app.use('/main', cardShowRouter);
-app.use('/', mainRouter);
+app.use('/', indexRouter);
+app.use('/main', mainRouter);
+app.use('/candidate', candidateRouter);
 
 const start = async () => {
   try {
