@@ -30,7 +30,9 @@ document.querySelector('#addcand').addEventListener('submit', async (e) => {
   // </div>
   //  `;
   const candHtml = await res.text();
-  document.querySelector('#cand_name').insertAdjacentHTML('beforeend', candHtml);
+  document
+    .querySelector('#cand_name')
+    .insertAdjacentHTML('beforeend', candHtml);
   // const parent = document.querySelector('#cand_name');
   // const image = newSmallCard.querySelector('img');
   // const nameDiv = newSmallCard.querySelector('div');
@@ -41,4 +43,5 @@ document.querySelector('#addcand').addEventListener('submit', async (e) => {
   // if (candHtml.message) {
   //   document.querySelector('#add').innerHTML = candHtml.message;
   // }
+  e.target.reset();
 });

@@ -97,7 +97,25 @@ function LeftNavigation({ data }) {
           </a>
         </li>
       </ul>
-      <div className="modal-window">
+
+      <button id="myBtn" type="button">
+        <div className="new-btn">
+          <img src="/img/cross-icon.svg" alt="Добавить" />
+        </div>
+      </button>
+      <div id="myModal" className="modal">
+        <div className="modal-content">
+          {/* <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Modal Header</h2>
+          </div> */}
+          <div className="modal-body">
+            <AddCandidate />
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="modal-window">
         <input type="checkbox" className="modal-trigger" id="modal-window" />
         <label className="modal-overlay" htmlFor="modal-window" />
         <label className="btn-modal" htmlFor="modal-window">
@@ -108,21 +126,12 @@ function LeftNavigation({ data }) {
 
         <div className="modal-container">
           <div className="modal-content">
-            <div className="modal-content-header">
-              <h3 className="modal-content-title">Lorem ipsum</h3>
-            </div>
             <div className="modal-content-body">
               <AddCandidate />
             </div>
-
-            <div className="modal-content-footer">
-              <label htmlFor="modal-window" className="item action">
-                Закрыть
-              </label>
-            </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
